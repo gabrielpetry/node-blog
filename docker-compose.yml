@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  api:
+    image: node:14
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - ./:/app
+    command: sh -c "yarn && yarn server"
+    working_dir: /app
+
+  frontend:
+    image: node:14
+    ports:
+      - ${PORT_FRONT}:3000
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: sh -c "yarn && yarn client"
