@@ -11,10 +11,11 @@
   ],
   "scripts": {
     "client": "yarn workspace client start",
-    "server": "yarn workspace server start",
+    "server": "yarn workspace server dev",
     "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn client\""
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "concurrently": "^6.2.0"
   },
   "devDependencies": {
